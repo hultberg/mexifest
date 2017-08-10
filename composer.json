@@ -1,0 +1,31 @@
+{
+  "name": "hultberg/mexifest",
+  "description": "A manifest.json reader",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Edvin Hultberg",
+      "email": "post@hultberg.no"
+    }
+  ],
+  "require": {
+    "php": ">=7",
+    "league/flysystem": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Hultberg\\Mexifest\\": "src/",
+      "Hultberg\\Mexifest\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.3"
+  },
+  "scripts": {
+    "test": "phpunit --colors tests/"
+  }
+}

@@ -1,0 +1,16 @@
+# mexifest is using .editorconfig ofc.
+root = true
+
+[*]
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.php]
+charset = utf-8
+indent_style = space
+indent_size = 4
+
+[*.json]
+indent_style = space
+indent_size = 2
