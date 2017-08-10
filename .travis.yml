@@ -6,4 +6,4 @@ php:
     - nightly
 
 install: composer install
-script: vendor/bin/phpunit --colors
+script: vendor/bin/phpunit --colors tests/
