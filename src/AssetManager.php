@@ -15,7 +15,17 @@ class AssetManager
     /**
      * @param array $assets Parsed assets.
      */
-    public function __construct(array $assets)
+    public function __construct(array $assets = [])
+    {
+        $this->setAssets($assets);
+    }
+
+    /**
+     * Set the asset for this manager.
+     *
+     * @param array $assets
+     */
+    public function setAssets(array $assets)
     {
         $this->assets = $assets;
     }
