@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Run a composer command with the php 7.0 image.
+#
+# Make sure to have built it first:
+# $ cd docker/php70 && docker build -t mexifest:php70 .
+
+set -e
+
+docker run --rm \
+    --tty \
+    --interactive \
+    --user $(id -u):$(id -g) \
+    --volume $(pwd):/app \
+    --volume $HOME/.cache/composer:/.composer/cache \
+    --workdir /app \
+    mexifest:php70 $@
