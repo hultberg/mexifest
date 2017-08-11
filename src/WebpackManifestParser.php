@@ -2,8 +2,8 @@
 
 namespace Hultberg\Mexifest;
 
+use League\Flysystem\FilesystemInterface;
 use League\Flysystem\FileNotFoundException;
-use League\Flysystem\Filesystem;
 
 /**
  * Parses a webpack manifest.json generated file.
@@ -25,7 +25,7 @@ class WebpackManifestParser implements Parser
     protected $fs;
     protected $file;
 
-    public function __construct(Filesystem $fs, string $file)
+    public function __construct(FilesystemInterface $fs, string $file)
     {
         $this->fs = $fs;
         $this->file = $file;
