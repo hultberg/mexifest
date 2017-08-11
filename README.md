@@ -4,6 +4,12 @@ A simple asset manager that parses manifest files for php.
 
 Requires php 7.0.
 
+## Install
+
+```
+$ composer require hultberg/mexifest
+```
+
 ## Usage
 
 **manifest.json**
