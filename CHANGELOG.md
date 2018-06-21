@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added methods `findByName`, `findByExtension` and `findAll` to `AssetManager`
 
 ## Changed:
+- BC: Project now requires php 7.1
 - Updated all composer dependencies
 
 ### Removed

@@ -2,7 +2,7 @@
 
 A simple asset manager that parses manifest files for php.
 
-Requires php 7.0.
+Requires php 7.1.
 
 ## Install
 
@@ -36,17 +36,17 @@ $am = new AssetManager((new WebpackManifestParser($fs, 'manifest.json'))->parse(
 
 /*
   Output: [
-    'app.js' => 'js/app.js',
+    ['app.js', 'js/app.js', 'js'],
   ]
  */
-var_dump($am->getJavascripts());
+var_dump($am->findByName('app.js'));
 
 /*
   Output: [
-    'app.css' => 'css/app.css',
+    ['app.css', 'css/app.css'],
   ]
  */
-var_dump($am->getStylesheets());
+var_dump($am->findByExtension('css'));
 ```
 
 ## License
