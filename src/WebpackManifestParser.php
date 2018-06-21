@@ -22,6 +22,13 @@ use League\Flysystem\FileNotFoundException;
  */
 class WebpackManifestParser implements Parser
 {
+    /**
+     * @var array
+     */
+    protected $supportedExts = [
+        'png', 'jpeg', 'jpg', 'gif', 'svg', 'js', 'css'
+    ];
+
     protected $fs;
     protected $file;
 
@@ -53,14 +60,18 @@ class WebpackManifestParser implements Parser
         foreach ($manifest as $fileName => $filePath) {
             $ext = pathinfo($filePath, PATHINFO_EXTENSION);
 
-            switch ($ext) {
-                case Parser::ASSET_JS:
-                case Parser::ASSET_CSS:
-                    $assets[$ext][$fileName] = $filePath;
-                    break;
+            if ($this->supportsExt($ext)) {
+                $assets[] = [basename($fileName), $filePath, $ext];
             }
         }
 
+        ksort($assets);
+
         return $assets;
+    }
+
+    private function supportsExt(string $ext): bool
+    {
+        return in_array($ext, $this->supportedExts, true);
     }
 }

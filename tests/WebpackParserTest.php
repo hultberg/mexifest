@@ -22,8 +22,8 @@ class WebpackParserTest extends TestCase
         $this->assertCount(2, $assets);
 
         // Check for the correct filename.
-        $this->assertSame('app.js', array_keys($assets[Parser::ASSET_JS])[0]);
-        $this->assertSame('app.css', array_keys($assets[Parser::ASSET_CSS])[0]);
+        $this->assertSame('app.js', $assets[0][0]);
+        $this->assertSame('app.css', $assets[1][0]);
     }
 
     public function testBadManifest()

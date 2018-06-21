@@ -18,7 +18,9 @@ class AssetManagerTest extends TestCase
         $parser = new WebpackManifestParser(new Filesystem(new Local(__DIR__)), 'manifest.json');
         $am = new AssetManager($parser->parse());
 
-        $this->assertCount(1, $am->getJavascripts());
-        $this->assertCount(1, $am->getStylesheets());
+        $this->assertCount(1, $am->findByExtension('js'));
+        $this->assertCount(1, $am->findByExtension('css'));
+        $this->assertCount(2, $am->findAll());
+        $this->assertCount(1, $am->findByName('app.js'));
     }
 }

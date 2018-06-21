@@ -30,13 +30,40 @@ class AssetManager
         $this->assets = $assets;
     }
 
-    public function getJavascripts(): array
+    public function findAll(): array
     {
-        return $this->assets[Parser::ASSET_JS] ?? [];
+        $assets = [];
+
+        foreach ($this->assets as $fileName => list($filePath)) {
+            $assets[$fileName] = $filePath;
+        }
+
+        return $assets;
     }
 
-    public function getStylesheets(): array
+    public function findByExtension(string $ext): array
     {
-        return $this->assets[Parser::ASSET_CSS] ?? [];
+        $foundAssets = [];
+
+        foreach ($this->assets as list($fileName, $filePath, $fileExt)) {
+            if ($fileExt === $ext) {
+                $foundAssets[] = [$fileName, $filePath];
+            }
+        }
+
+        return $foundAssets;
+    }
+
+    public function findByName(string $name): array
+    {
+        $foundAssets = [];
+
+        foreach ($this->assets as list($fileName, $filePath)) {
+            if ($fileName === $name) {
+                $foundAssets[] = [$fileName, $filePath];
+            }
+        }
+
+        return $foundAssets;
     }
 }
