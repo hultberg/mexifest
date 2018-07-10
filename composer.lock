@@ -4,38 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2bfe23e28cd34189aab5a64e74b33b5",
+    "content-hash": "50ef752286ca09c313473a27c9d2cb01",
     "packages": [
-        {
-            "name": "hultberg/phpstan-shim",
-            "version": "v0.10.2-rc",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/hultberg/phpstan-shim/",
-                "reference": "06fa23fed492cdb7d29845dad62bd9df5d101fb3"
-            },
-            "require": {
-                "php": "~7.1"
-            },
-            "replace": {
-                "phpstan/phpstan": "self.version"
-            },
-            "bin": [
-                "phpstan",
-                "phpstan.phar"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.10-dev"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "PHPStan Phar distribution",
-            "time": "2018-07-10T13:32:18+00:00"
-        },
         {
             "name": "league/flysystem",
             "version": "1.0.45",
@@ -175,6 +145,36 @@
                 "instantiate"
             ],
             "time": "2017-07-22T11:58:36+00:00"
+        },
+        {
+            "name": "hultberg/phpstan-shim",
+            "version": "v0.10.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hultberg/phpstan-shim/",
+                "reference": "06fa23fed492cdb7d29845dad62bd9df5d101fb3"
+            },
+            "require": {
+                "php": "~7.1"
+            },
+            "replace": {
+                "phpstan/phpstan": "self.version"
+            },
+            "bin": [
+                "phpstan",
+                "phpstan.phar"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.10-dev"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan Phar distribution",
+            "time": "2018-07-10T13:32:18+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -1530,9 +1530,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "hultberg/phpstan-shim": 5
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
